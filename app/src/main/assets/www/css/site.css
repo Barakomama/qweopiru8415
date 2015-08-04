@@ -1,0 +1,148 @@
+/* Equivalent to Body */
+.ui-page{  
+  background-image: url(images/bgImage.jpg);
+  background-repeat:no-repeat; 
+  background-position:center; 
+  background-size:cover;
+  font-family: "Segoe UI", Verdana, Helvetica, Sans-Serif;
+  color: white;
+}
+#topCities{
+  padding-top: 40px
+}
+#sideMenuPanel{
+  padding-top: 25px
+}
+#myPanel, .navbar-fixed-top{
+  background-color: #494949!important;
+}
+.prime-color a{
+  color:#ffbc3d!important;
+}
+.prime-color{
+  padding: 10px 0!important
+}
+.prime-color-1 a{
+  color: white!important
+}
+.prime-color-1{
+  padding: 10px 0 10px 10px!important;
+  border-bottom:2px solid #ffbc3d;
+}
+.ui-content{
+  padding: 0
+}
+
+a{
+  color: gray!important;
+}
+
+a:hover, a:focus{
+  color: gray;
+  text-decoration: none;
+}
+
+#initial-page{ 
+  background-repeat:no-repeat;
+  background-attachment:fixed;
+  background-position:center;
+  background-size:cover;
+}
+
+.ui-mobile-viewport{ 
+  background-repeat:no-repeat;
+  background-attachment:fixed;
+  background-position:center;
+  background-size:cover;
+}
+
+.pad-li{
+  font-size: 20px;
+  padding: 10px 5px;
+  color: black
+}
+
+input{
+  font-family: "Segoe UI", Verdana, Helvetica, Sans-Serif;
+  color: gray
+} 
+
+.ui-overlay-a, .ui-page-theme-a, .ui-page-theme-a .ui-panel-wrapper{
+  text-shadow:none!important;
+}
+
+.cityImage{
+  background-repeat:no-repeat;
+  background-size: 100% 100%;
+  height:180px;
+  color: white;
+  font-weight: 500;
+  font-size: 30px;
+  padding-top:25%;
+  text-shadow:
+       2px 2px 0 #000,
+      -1px -1px 0 #000,  
+       1px -1px 0 #000,
+      -1px 1px 0 #000,
+       1px 1px 0 #000;
+} 
+ 
+.ui-body-a, .ui-page-theme-a .ui-body-inherit, html .ui-bar-a .ui-body-inherit, html .ui-body-a .ui-body-inherit, html body .ui-group-theme-a .ui-body-inherit, html .ui-panel-page-container-a
+{
+  text-shadow:none; 
+}
+ 
+.controls{
+  color: orange;
+  padding: 5px 0;
+  border: .5px solid orange; 
+}
+
+.footer{
+  background-color: white;
+}
+
+#logo{
+  width:120px;
+  height:250px;
+  padding-top:50px
+}
+ 
+.modal-backdrop{
+  background-color: white;
+}
+
+.btn:hover, .btn:focus{
+  color: white;
+  text-decoration: none;;
+}
+
+.no-border{
+  width: 100%;
+  border: 0;
+  border-bottom: 3px solid gray;
+  background-color:transparent;
+}
+
+button.no-border:hover{
+  background-color: orange
+}
+
+.btn-no-border{
+  background-color: transparent;
+  border: 0;
+  font-weight: 700
+}
+
+.pointer{
+  cursor:pointer;
+}
+
+.weight7{
+  font-weight: 900
+}
+
+#background-orange{
+  background-color: orange;
+  height: 800px;
+}

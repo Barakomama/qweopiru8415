@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" /> 
+<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+<title>Sure Park Home</title>
+<!-- CSS -->
+<link rel="stylesheet" href="css/bootstrap.css">
+<link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css">
+<link rel="stylesheet" href="css/site.css">
+<link rel="stylesheet" href="css/font-awesome.css">
+<!-- JS --> 
+<script src="js/jquery-1.11.3.min.js" type="text/javascript"></script>
+<script src="js/bootstrap.min.js" type="text/javascript"></script>
+<script src="js/jquery.mobile-1.4.5.min.js" type="text/javascript"></script> 
+<script src="js/jquery.maskedinput.js" type="text/javascript"></script>
+
+<!-- <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places"></script>-->
+<script src="jsproper/1-index.js" type="text/javascript"></script>
+
+</head>
+
+<body>
+
+<input type="hidden" id="current" value="index" />
+
+<!-- MODAL LOADERS -->
+<div class="modal fade text-center" id="modalLoader" data-keyboard="false" data-backdrop="static" style="background-image:url(css/images/spSplash.jpg);background-repeat:no-repeat;background-attachment:fixed;
+    background-position: center;background-size:cover;">
+  <div class="modal-dialog"> 
+        <img src="css/images/loader.gif"/> 
+        <h2 id="loadText"></h2>
+  </div>
+</div>
+
+<div class="modal fade" id="modalLocation">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body text-center">
+        <div class="row">
+          
+          <div class="col-xs-12">
+            <strong class="h2">Where are you now?</strong>
+              <br/><br/>
+              <input type="text" data-role="none" maxlength="20" id="locationText" placeholder="Location" class="no-border" />
+              <div id="content" class="text-left" style="line-height:2em">
+
+              </div>
+              <br/>
+              <button class="btn btn-default" data-role="none">
+                Get Location Automatically
+              </button>
+                  <select id="selectLocation" data-role="none" class="hidden">
+                    <option value="abra">Abra</option>
+                    <option value="agusan del norte">Agusan del Norte</option>
+                    <option value="agusan del sur">Agusan del Sur</option>
+                    <option value="aklan">Aklan</option>
+                    <option value="albay">Albay</option>
+                    <option value="antique">Antique</option>
+                    <option value="apayao">Apayao</option>
+                    <option value="aurora">Aurora</option>
+                    <option value="basilan">Basilan</option>
+                    <option value="bataan">Bataan</option>
+                    <option value="batanes">Batanes</option>
+                    <option value="batangas">Batangas</option>
+                    <option value="benguet">Benguet</option>
+                    <option value="biliran">Biliran</option>
+                    <option value="bohol">Bohol</option>
+                    <option value="bukidnon">Bukidnon</option>
+                    <option value="bulacan">Bulacan</option>
+                    <option value="cagayan">Cagayan</option>
+                    <option value="camarines norte">Camarines Norte</option>
+                    <option value="camarines sur">Camarines Sur</option>
+                    <option value="camiguin">Camiguin</option>
+                    <option value="capiz">Capiz</option>
+                    <option value="catanduanes">Catanduanes</option>
+                    <option value="cavite">Cavite</option>
+                    <option value="cebu">Cebu</option>
+                    <option value="compostela valley">Compostela Valley</option>
+                    <option value="cotabato">Cotabato</option>
+                    <option value="davao del norte">Davao del Norte</option>
+                    <option value="davao del sur">Davao del Sur</option>
+                    <option value="davao occidental">Davao Occidental</option>
+                    <option value="davao oriental">Davao Oriental</option>
+                    <option value="dinagat islands">Dinagat Islands</option>
+                    <option value="eastern samar">Eastern Samar</option>
+                    <option value="guimaras">Guimaras</option>
+                    <option value="ifugao">Ifugao</option>
+                    <option value="ilocos norte">Ilocos Norte</option>
+                    <option value="ilocos sur">Ilocos Sur</option>
+                    <option value="iloilo">Iloilo</option>
+                    <option value="isabela">Isabela</option>
+                    <option value="kalinga">Kalinga</option>
+                    <option value="la union">La Union</option>
+                    <option value="laguna">Laguna</option>
+                    <option value="lanao del norte">Lanao del Norte</option>
+                    <option value="lanao del sur">Lanao del Sur</option>
+                    <option value="leyte">Leyte</option>
+                    <option value="maguindanao">Maguindanao</option>
+                    <option value="marinduque">Marinduque</option>
+                    <option value="masbate">Masbate</option>
+                    <option value="metro manila">Metro Manila</option>
+                    <option value="misamis occidental">Misamis Occidental</option>
+                    <option value="misamis oriental">Misamis Oriental</option>
+                    <option value="mountain province">Mountain Province</option>
+                    <option value="negros occidental">Negros Occidental</option>
+                    <option value="negros oriental">Negros Oriental</option>
+                    <option value="northern samar">Northern Samar</option>
+                    <option value="nueva ecija">Nueva Ecija</option>
+                    <option value="nueva vizcaya">Nueva Vizcaya</option>
+                    <option value="occidental mindoro">Occidental Mindoro</option>
+                    <option value="oriental mindoro">Oriental Mindoro</option>
+                    <option value="palawan">Palawan</option>
+                    <option value="pampanga">Pampanga</option>
+                    <option value="pangasinan">Pangasinan</option>
+                    <option value="quezon">Quezon</option>
+                    <option value="quirino">Quirino</option>
+                    <option value="rizal">Rizal</option>
+                    <option value="romblon">Romblon</option>
+                    <option value="samar">Samar</option>
+                    <option value="sarangani">Sarangani</option>
+                    <option value="siquijor">Siquijor</option>
+                    <option value="sorsogon">Sorsogon</option>
+                    <option value="south cotabato">South Cotabato</option>
+                    <option value="southern leyte">Southern Leyte</option>
+                    <option value="sultan kudarat">Sultan Kudarat</option>
+                    <option value="sulu">Sulu</option>
+                    <option value="surigao del norte">Surigao del Norte</option>
+                    <option value="surigao del sur">Surigao del Sur</option>
+                    <option value="tarlac">Tarlac</option>
+                    <option value="tawi-tawi">Tawi-Tawi</option>
+                    <option value="zambales">Zambales</option>
+                    <option value="zamboanga del norte">Zamboanga del Norte</option>
+                    <option value="zamboanga del sur">Zamboanga del Sur</option>
+                    <option value="zamboanga sibugay">Zamboanga Sibugay</option>
+            </select>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="wrapper"></div>
+
+  <div class="container" data-role="page" id="initial-page">
+    <div class="row" id="margin-top">
+   
+      <div class="col-xs-12 text-center">
+        <img src="css/images/spLogo.jpg" id="logo"/>
+      </div>
+
+      <div class="col-xs-12">
+        <div class="container">
+          <form id="userCredentials">
+            <br/><br/>
+            <input type="text" id="username" name="username" placeholder="email/phone number" class="no-border" data-role="none"/>
+            <br/> <br/>
+            <input type="password" id="passwords" name="passwords" placeholder="password" class="no-border" data-role="none"/> 
+            <br/> <br/>
+            <div class="text-right">
+              <button type="submit" class="btn-no-border btn" data-role="none"> 
+                Sign In
+              </button>
+            </div>
+          </form>
+          <div class="btn btn-primary" data-role="none">
+            <button id="TestText">hello</button>
+          </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row navbar-fixed-bottom" style="padding-bottom:20px">
+        <div class="col-xs-12" id="container-register-reset">
+          <div class="container">
+            <div class="row">
+              <div class="col-xs-8 text-left"> 
+                  <i class="pointer">Forgot your Password?</i>
+              </div>
+              <div class="col-xs-4 text-right"> 
+                  <a data-transition="slide" href="#registerPage">Sign Up</a> 
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div> 
+
+  <div class="container" data-role="page" id="registerPage">
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="container"> 
+          <h2>Sure Park New User</h2>
+            <form id="registerCredentials">
+              <br/>
+              <input type="hidden" name="type" value="4" />
+              <input type="text" placeholder="Name" id="name" name="name" class="no-border" data-role="none"/><br/><br/>
+              <input type="text" placeholder="Email Address" id="email" name="email" class="no-border" data-role="none"/><br/><br/>
+              <input type="text" placeholder="9XX-XXX-XXXX" id="number" name="number" class="no-border" data-role="none"/><br/><br/>
+              <input type="password" placeholder="Password" id="password" name="password" class="no-border" data-role="none"/><br/><br/>
+              <input type="password" placeholder="Type Password Again" id="repassword" name="repassword" class="no-border" data-role="none"/><br/><br/>
+
+              <div class="col-xs-12 text-center">
+                <button type="submit" class="btn-no-border btn" data-role="none">Register</button>
+              </div>
+            </form>
+
+            <a data-transition="slide" data-direction="reverse" data href="#initial-page">Log In</a>  
+
+        </div>
+      </div>
+    </div>
+  </div> 
+
+
+</body> 
+
+</html> 
